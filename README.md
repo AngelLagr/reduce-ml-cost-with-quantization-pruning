@@ -1,4 +1,4 @@
-# Weight Usage Analyzer Demo
+# Reduce the ML-cost with quantization and pruning
 
 This project demonstrates the impact of model design choices on both energy consumption and economic cost.
 It analyzes the weight importance within a neural network, estimates the total FLOPs required for inference, and explores how quantization and pruning affect both model performance and resource efficiency.
