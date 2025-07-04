@@ -5,4 +5,4 @@ matplotlib
 scipy
 ptflops
 jupyter
-sklearn
+scikit-learn
