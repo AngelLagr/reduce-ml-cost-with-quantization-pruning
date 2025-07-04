@@ -26,8 +26,7 @@ It analyzes the weight importance within a neural network, estimates the total F
 
 1. Clone the repository:
    ```
-   git clone https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git
-   cd weight-usage-analyzer-demo
+   git clone [https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git](https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git)
    ```
 
 2. Install the required packages:
