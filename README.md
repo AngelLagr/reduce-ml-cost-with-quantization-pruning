@@ -1,11 +1,12 @@
 # Weight Usage Analyzer Demo
 
-This project demonstrates the use of a weight usage analyzer for neural network models, specifically focusing on a simple model trained on the wine dataset. The goal is to analyze weight importance, estimate FLOPs, and explore the effects of quantization on model performance and resource usage.
+This project demonstrates the impact of model design choices on both energy consumption and economic cost.
+It analyzes the weight importance within a neural network, estimates the total FLOPs required for inference, and explores how quantization and pruning affect both model performance and resource efficiency.
 
 ## Project Structure
 
 - **core/**: Contains the main functionality for analyzing weight usage.
-  - `weightusageanalyzer.py`: Functions to compute weight importance for TensorFlow/Keras and PyTorch models.
+  - `weightusageanalyzer.py`: Functions to compute weight importance for TensorFlow/Keras and PyTorch models that come from my repo : https://github.com/AngelLagr/weight-usage-analyser
 
 - **notebooks/**: Jupyter notebook for demonstration purposes.
   - `demo.ipynb`: A notebook that loads the Breast Cancer dataset, trains a simple model, and visualizes weight importance.
@@ -14,7 +15,7 @@ This project demonstrates the use of a weight usage analyzer for neural network 
   - `simple_model.py`: A simple neural network model with one hidden layer.
 
 - **data/**: Functions for loading and preprocessing datasets.
-  - `load_breast_cancer.py`: Functions to load and preprocess the Breast Cancer dataset.
+  - `load_wine_dataset.py`: Functions to load and preprocess the keras wine dataset.
 
 - **quantization/**: Contains functions for model quantization.
   - `quantize.py`: Functions to analyze the impact of quantization on model performance and resource usage.
