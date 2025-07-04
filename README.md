@@ -46,11 +46,11 @@ It analyzes the weight importance within a neural network, estimates the total F
 
 ## Components Overview
 
-- **Weight Usage Analyzer**: The core functionality for analyzing the importance of weights in neural networks.
+- **Weight Usage Analyzer**: The core functionality for analyzing the importance of weights in neural networks and help for prunning it.
 - **Simple Model**: A basic neural network architecture to demonstrate the weight usage analysis.
 - **Data Loading**: Functions to handle the Breast Cancer dataset, including normalization and splitting.
 - **Quantization**: Tools to reduce model size and analyze the impact on performance and energy efficiency.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the Apache 2.0 License. See the LICENSE file for more details.
