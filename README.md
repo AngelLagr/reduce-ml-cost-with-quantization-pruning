@@ -9,7 +9,7 @@ It analyzes the weight importance within a neural network, estimates the total F
   - `weightusageanalyzer.py`: Functions to compute weight importance for TensorFlow/Keras and PyTorch models that come from my repo : https://github.com/AngelLagr/weight-usage-analyser
 
 - **notebooks/**: Jupyter notebook for demonstration purposes.
-  - `demo.ipynb`: A notebook that loads the Breast Cancer dataset, trains a simple model, and visualizes weight importance.
+  - `demo.ipynb`: A notebook that loads the keras wine dataset, trains a simple model, and does a study of it's cost with and without pruning and quantization.
 
 - **models/**: Defines the neural network architecture.
   - `simple_model.py`: A simple neural network model with one hidden layer.
@@ -26,7 +26,7 @@ It analyzes the weight importance within a neural network, estimates the total F
 
 1. Clone the repository:
    ```
-   git clone [https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git](https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git)
+   git clone https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git
    ```
 
 2. Install the required packages:
