@@ -1,0 +1,8 @@
+numpy
+tensorflow
+torch
+matplotlib
+scipy
+ptflops
+jupyter
+sklearn
