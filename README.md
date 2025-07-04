@@ -1,5 +1,9 @@
 # Reduce the ML-cost with quantization and pruning
 
+I wanted to try and test what this publication talks about : https://arxiv.org/abs/2307.02973
+
+So I made a little study of the technology presented in the publication in this project.
+
 This project demonstrates the impact of model design choices on both energy consumption and economic cost.
 It analyzes the weight importance within a neural network, estimates the total FLOPs required for inference, and explores how quantization and pruning affect both model performance and resource efficiency.
 
