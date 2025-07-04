@@ -29,7 +29,7 @@ It analyzes the weight importance within a neural network, estimates the total F
    git clone https://github.com/AngelLagr/reduce-ml-cost-with-quantization-pruning.git
    ```
 
-2. Install the required packages:
+2. Install the required packages (Python version == 3.10.13):
    ```
    pip install -r requirements.txt
    ```
