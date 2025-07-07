@@ -8,13 +8,13 @@ from scipy.stats import entropy as scipy_entropy
 from ptflops import get_model_complexity_info
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
-def compute_weight_importance_torch(model, X, skip_last=True):
+def compute_weight_importance_torch(model, dataset, skip_last=True):
     model.eval()
     importance_list = []
-    if isinstance(X, torch.Tensor):
-        current_input = X.detach().clone().float()
+    if isinstance(dataset, torch.Tensor):
+        current_input = dataset.detach().clone().float()
     else:
-        current_input = torch.tensor(X, dtype=torch.float32)
+        current_input = torch.tensor(dataset, dtype=torch.float32)
     
     linear_layers = [name for name, layer in model.named_modules() if isinstance(layer, torch.nn.Linear)]
     skip_last = False if not skip_last else len(linear_layers) >= 2
@@ -33,9 +33,9 @@ def compute_weight_importance_torch(model, X, skip_last=True):
 
     return importance_list
 
-def compute_weight_importance_tf(model, X, skip_last=True):
+def compute_weight_importance_tf(model, dataset, skip_last=True):
     importance_list = []
-    current_input = X.copy()
+    current_input = dataset.copy()
 
     dense_layers = [layer for layer in model.layers if isinstance(layer, tf.keras.layers.Dense)]
 
@@ -57,16 +57,16 @@ def compute_weight_importance_tf(model, X, skip_last=True):
 
     return importance_list
 
-def compute_weight_importance(model, X, skip_last=True):
+def compute_weight_importance(model, dataset, skip_last=True):
     try:
         if isinstance(model, (tf.keras.Model, tf.keras.Sequential)):
-            return compute_weight_importance_tf(model, X, skip_last=skip_last)
+            return compute_weight_importance_tf(model, dataset, skip_last=skip_last)
     except ImportError:
         pass
 
     try:
         if isinstance(model, torch.nn.Module):
-            return compute_weight_importance_torch(model, X, skip_last=skip_last)
+            return compute_weight_importance_torch(model, dataset, skip_last=skip_last)
     except ImportError:
         pass
 
@@ -160,13 +160,13 @@ def print_flops_report(model, nb_epochs, dataset):
     print(f" - Training ({nb_epochs} epochs, {nb_samples} samples): {train_flops:,} operations")
     print(f" - Inference ({nb_samples} samples): {infer_flops:,} operations")
 
-def show(model, X):
-    importance_list = compute_weight_importance(model, X, skip_last=False)    
+def show(model, dataset):
+    importance_list = compute_weight_importance(model, dataset, skip_last=False)    
 
     layer_positions = []
     layer_names = []
 
-    input_dim = X.shape[1]
+    input_dim = dataset.shape[1]
     input_layer = [f"Input {i}" for i in range(input_dim)]
     layer_positions.append(input_layer)
     layer_names.append("Input")
@@ -177,7 +177,7 @@ def show(model, X):
         layer_positions.append(layer)
         layer_names.append(name)
 
-    fig, ax = plt.subplots(figsize=(12, 6))
+    _, ax = plt.subplots(figsize=(12, 6))
     ax.axis("off")
     spacing_x = 3
     spacing_y = 1.5
