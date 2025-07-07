@@ -156,7 +156,7 @@ def estimate_flops(model, nb_epochs, dataset):
 def print_flops_report(model, nb_epochs, dataset):
     train_flops, infer_flops = estimate_flops(model, nb_epochs, dataset)
     nb_samples = len(dataset)
-    print(f"\n🧮 FLOPs Estimation:")
+    print("\n🧮 FLOPs Estimation:")
     print(f" - Training ({nb_epochs} epochs, {nb_samples} samples): {train_flops:,} operations")
     print(f" - Inference ({nb_samples} samples): {infer_flops:,} operations")
 
